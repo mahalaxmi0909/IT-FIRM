@@ -1,5 +1,5 @@
 /* ========================================
-   NexaTech IT Firm - Simple CSS Styles
+   Orbit Tech IT Firm - Simple CSS Styles
    ======================================== */
 
 /* Reset & Base */
@@ -93,14 +93,119 @@ a:hover {
   align-items: center;
 }
 
+/* Logo Styles */
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: transform 0.3s ease;
 }
 
 .logo:hover {
+  transform: scale(1.05);
   text-decoration: none;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+}
+
+.orbit-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid;
+}
+
+.orbit-ring.outer {
+  inset: 0;
+  border-color: rgba(37, 99, 235, 0.8); /* blue-600 with opacity */
+}
+
+.orbit-ring.inner {
+  inset: 0.5rem;
+  border-color: rgba(6, 182, 212, 0.6); /* cyan-500 with opacity */
+}
+
+.orbit-core {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit-core::before {
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #2563eb; /* blue-600 */
+  border-radius: 50%;
+}
+
+.orbit-dot {
+  position: absolute;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+}
+
+.orbit-dot.top {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #06b6d4; /* cyan-500 */
+}
+
+.orbit-dot.bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background-color: #3b82f6; /* blue-500 */
+}
+
+.orbit-dot.left {
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0891b2; /* cyan-600 */
+}
+
+.orbit-dot.right {
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+  background-color: #3b82f6; /* blue-500 */
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.orbit-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #2563eb, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.tech-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569; /* slate-600 */
+  line-height: 1.2;
 }
 
 .nav a {
@@ -245,6 +350,23 @@ a:hover {
   background-color: #fff;
   padding: 25px;
   border: 1px solid #ddd;
+}
+.header-logo {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.header-logo {
+  transition: opacity 0.3s ease;
+}
+
+.header-logo:hover {
+  opacity: 0.85;
 }
 
 .testimonial p {
